@@ -1,0 +1,83 @@
+﻿@page "/"
+<head>
+
+    <style>
+        .checkboxContainer{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .checkboxes{
+            height: 100%;
+            width: 50%;
+     
+        }
+        .tableholder{
+            height: 100%;
+            width: 50%;
+        }
+    </style>
+</head>
+<div class="checkboxContainer">
+    <div class="checkboxes">
+        <input type="checkbox" id="check1" @bind="IsCheckBox1Checked">
+        <label for="check1">Explosive</label>
+        <input type="checkbox" id="check2" @bind="IsCheckBox2Checked">
+        <label for="check2">Chemical</label>
+        <input type="checkbox" id="check3" @bind="IsCheckBox3Checked">
+        <label for="check3">Biological</label>
+        <input type="checkbox" id="check4" @bind="IsCheckBox4Checked">
+        <label for="check4">Rediological</label><br>
+
+
+    </div>
+    <div class="tableholder">
+        <table border="1">
+            <th>
+            <td>
+                Hazards
+            </td>
+            </th>
+            @if (IsCheckBox1Checked)
+            {
+                <tr>
+                    <td>
+                        E
+                    </td>
+                </tr>
+            }
+            @if (IsCheckBox2Checked)
+            {
+                <tr>
+                    <td>
+                        C
+                    </td>
+                </tr>
+            }
+            @if (IsCheckBox3Checked)
+            {
+                <tr>
+                    <td>
+                        B
+                    </td>
+                </tr>
+            }
+            @if (IsCheckBox4Checked)
+            {
+                <tr>
+                    <td>
+                        R
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+@code{
+    private bool IsCheckBox1Checked { get; set; }
+    private bool IsCheckBox2Checked { get; set; }
+    private bool IsCheckBox3Checked { get; set; }
+    private bool IsCheckBox4Checked { get; set; }
+}
